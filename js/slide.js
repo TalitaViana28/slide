@@ -1,6 +1,6 @@
 import debounce from './debounce.js';
 
-export default class Slide {
+export class Slide {
   constructor(slide, wrapper) {
     this.slide = document.querySelector(slide);
     this.wrapper = document.querySelector(wrapper);
@@ -170,7 +170,7 @@ export default class SlideNav extends Slide {
     const control = document.createElement('ul');
     control.dataset.control = 'slide';
     this.slideArray.forEach((item, index) => {
-      control.innerHTML += `<li><a href="#slide${index + 1}">${index}</a></li>`;
+      control.innerHTML += `<li><a href="#slide${index + 1}">${index +1}</a></li>`;
     })
     this.wrapper.appendChild(control);
     return control;
